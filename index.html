@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Grid</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.login-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.login-container::after{
+   
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(0deg, #000000 0%, #232323 22%, #373737ed 55%, #0707076b 75%, #ffffff29 100%);
+    z-index: 1;
+}
+.flex-container {
+    display: flex;
+}
+
+.left {
+    width: 66%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.flex-item {
+    border-radius: 5px;
+    animation: vanish 2s ease; 
+}
+
+.square {
+    height: 120px;
+    width: calc(50% - 4px);
+    margin: 2px;
+    animation-delay: 0.5s; 
+}
+.square img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.square-1 {
+    height: 120px;
+    width: calc(50% - 4px);
+    margin: 2px;
+    animation-delay: 0.7s; 
+}
+.square-1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    
+}
+.v-rectangle {
+    width: 130px;
+    height: 245px;
+    margin: 2px;
+    animation-delay: 1s; 
+}
+.v-rectangle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+} 
+.h-rectangle {
+    width: 100%;
+    height: 120px;
+    margin: 2px;
+    animation-delay: 1.2s; 
+}
+.h-rectangle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.square-2 {
+    height: 120px;
+    width: 130px;
+    margin: 2px;
+    animation-delay: .5s; 
+}
+
+.square-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+@keyframes vanish {
+    0% {
+        opacity: 1;
+    }
+    
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.login-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -170px;
+    z-index: 2;
+}
+.login-form h2{
+    font-size: 28px;
+    color: #fff;
+    text-transform: capitalize;
+}
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+  max-width: 240px;
+}
+
+.coolinput label.text {
+  font-size: 0.75rem;
+  color: #818CF8;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #e8e8e8;
+  width: fit-content;
+}
+
+.coolinput input[type=text].input {
+  padding: 11px 10px;
+  font-size: 0.75rem;
+  border: 2px #818CF8 solid;
+  border-radius: 5px;
+  background: #e8e8e8;
+}
+
+.coolinput input[type=text].input:focus {
+  outline: none;
+}
+.social-icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}  
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="flex-container">
+            <div class="left">
+                <div class="flex-item square-1"><img src="https://source.unsplash.com/random/"alt=""></div>
+                <div class="flex-item square"><img src="https://source.unsplash.com/random/"alt=""></div>
+                <div class="flex-item square-1"><img src="https://source.unsplash.com/random/"alt=""></div>
+                <div class="flex-item square"><img src="https://source.unsplash.com/random/"alt=""></div>
+                <div class="flex-item h-rectangle"><img src="https://source.unsplash.com/random/"alt=""></div>
+            </div>
+            <div class="right">
+                <div class="flex-item v-rectangle"><img src="https://source.unsplash.com/random/"alt=""></div>
+                <div class="flex-item square-2"><img src="https://source.unsplash.com/random/"alt=""></div>
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>login</h2>
+            <!-- <div class="coolinput">
+                <label for="input" class="text">Name:</label>
+                <input type="text" placeholder="Write here..." name="input" class="input">
+            </div>
+            <div class="coolinput">
+                <label for="input" class="text">Password:</label>
+                <input type="text" placeholder="Write here..." name="input" class="input">
+            </div> -->
+            
+        </div>
+        <div class="social-icons-container">
+            <div class="whatsapp"></div>
+            <div class="facebook"></div>
+            <div class="instagram"></div>
+        </div>
+    </div>
+
+</body>
+</html>
